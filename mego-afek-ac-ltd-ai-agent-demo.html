@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mego Afek AC LTD — AI Agent Demo</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f8;color:#1a1a2e}
+.hero{background:linear-gradient(135deg,#07080f 0%,#1a1a40 100%);color:#fff;padding:80px 40px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,230,195,.12);border:1px solid rgba(0,230,195,.35);color:#00e6c3;font-size:.78rem;padding:8px 18px;border-radius:100px;margin-bottom:24px;font-family:monospace;letter-spacing:.07em}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:#00e6c3;animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;margin-bottom:16px;letter-spacing:-.02em;line-height:1.15}
+.hero h1 em{color:#00e6c3;font-style:normal}
+.hero p{font-size:1rem;opacity:.7;max-width:480px;margin:0 auto 36px;line-height:1.65}
+.features{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.feat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);padding:7px 15px;border-radius:100px;font-size:.78rem}
+.section{max-width:720px;margin:64px auto;padding:0 24px}
+.section h2{font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:8px}
+.section .sub{text-align:center;color:#777;margin-bottom:32px;font-size:.9rem}
+.chat-card{background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,.12);overflow:hidden}
+.chat-head{background:linear-gradient(135deg,#07080f,#1a1a40);color:#fff;padding:18px 22px;display:flex;align-items:center;gap:14px}
+.chat-av{width:42px;height:42px;border-radius:11px;background:rgba(0,230,195,.18);border:1px solid rgba(0,230,195,.35);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.chat-info .name{font-weight:700;font-size:.95rem}
+.chat-info .status{font-size:.72rem;opacity:.6;margin-top:2px}
+.online{color:#00e6c3}
+.chat-msgs{padding:22px;min-height:260px;display:flex;flex-direction:column;gap:14px;max-height:360px;overflow-y:auto}
+.bubble{max-width:78%;padding:11px 15px;border-radius:14px;font-size:.88rem;line-height:1.58}
+.bubble.bot{background:#f0f2f8;border-radius:4px 14px 14px 14px}
+.bubble.user{background:#1a1a40;color:#fff;margin-left:auto;border-radius:14px 4px 14px 14px}
+.chat-in{padding:14px 18px;border-top:1px solid #eee;display:flex;gap:10px}
+.chat-in input{flex:1;padding:11px 15px;border:1.5px solid #dde;border-radius:10px;outline:none;font-size:.88rem;transition:border .2s}
+.chat-in input:focus{border-color:#00e6c3}
+.chat-in button{background:#07080f;color:#fff;border:none;padding:11px 22px;border-radius:10px;cursor:pointer;font-size:.88rem;font-weight:600;transition:all .2s;white-space:nowrap}
+.chat-in button:hover{background:#00e6c3;color:#07080f}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:40px}
+.why-card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.why-card .icon{font-size:1.6rem;margin-bottom:12px}
+.why-card h3{font-size:.95rem;font-weight:700;margin-bottom:6px}
+.why-card p{font-size:.82rem;color:#666;line-height:1.55}
+.cta-section{background:linear-gradient(135deg,#07080f,#1a1a40);color:#fff;padding:80px 40px;text-align:center}
+.cta-section h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin-bottom:16px}
+.cta-section p{opacity:.7;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65}
+.cta-btn-link{display:inline-block;background:#00e6c3;color:#07080f;padding:16px 42px;border-radius:12px;font-size:1.02rem;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:16px}
+.cta-btn-link:hover{background:#00fff0;transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,230,195,.4)}
+.price{opacity:.55;font-size:.85rem}
+.footer{text-align:center;padding:28px;font-size:.78rem;color:#999;border-top:1px solid #e8e8f0}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-badge"><span class="hero-dot"></span> AI AGENT DEMO — POWERED BY VIRTUAL ORANGES</div>
+  <h1>Meet <em>Mego Afek AC LTD</em>'s<br>New AI Assistant</h1>
+  <p>Trained on your actual website. Answers customer questions 24/7 — automatically, accurately, and on-brand.</p>
+  <div class="features">
+    <div class="feat">💬 Live Chat</div>
+    <div class="feat">🎙️ Voice Ready</div>
+    <div class="feat">🧠 Trained on Your Site</div>
+    <div class="feat">⚡ Instant Answers</div>
+    <div class="feat">📱 Mobile Friendly</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Try It Right Now</h2>
+  <p class="sub">This agent was trained on <strong>Mego Afek AC LTD</strong>'s website. Ask it anything a customer would ask.</p>
+  <div class="chat-card">
+    <div class="chat-head">
+      <div class="chat-av">🤖</div>
+      <div class="chat-info">
+        <div class="name">Mego Afek AC LTD AI Assistant</div>
+        <div class="status"><span class="online">●</span> Online 24/7 · Responds instantly</div>
+      </div>
+    </div>
+    <div class="chat-msgs" id="msgs">
+      <div class="bubble bot">Hi! I'm the AI assistant for <strong>Mego Afek AC LTD</strong>. I've been trained on your website and can help answer questions about your services, pricing, hours, and more. What can I help you with today? 👋</div>
+    </div>
+    <div class="chat-in">
+      <input id="ci" placeholder="Ask me anything about Mego Afek AC LTD…" onkeypress="if(event.key==='Enter')send()">
+      <button onclick="send()">Send →</button>
+    </div>
+  </div>
+
+  <div class="why">
+    <div class="why-card"><div class="icon">⏰</div><h3>24/7 Availability</h3><p>Never miss a lead. Your AI handles inquiries at 3am on a Sunday just as well as business hours.</p></div>
+    <div class="why-card"><div class="icon">🎯</div><h3>Trained on Your Content</h3><p>Not a generic bot — it knows your specific services, prices, and FAQs from your actual website.</p></div>
+    <div class="why-card"><div class="icon">📈</div><h3>Convert More Visitors</h3><p>Visitors who chat are 3× more likely to convert. Your AI turns browsers into buyers automatically.</p></div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Ready to Put This Live on Your Site?</h2>
+  <p>This demo was built in under a minute from your website. We can have a fully customised, live version running on https://www.megoafek.com within 48 hours.</p>
+  <a href="mailto:hello@virtualoranges.com?subject=AI Agent for Mego Afek AC LTD" class="cta-btn-link">Get My AI Agent — $500/mo</a>
+  <p class="price">Full setup included · No contracts · Cancel anytime</p>
+</div>
+
+<div class="footer">Demo built by <strong>Virtual Oranges</strong> · <a href="https://virtualoranges.com" style="color:#00e6c3;text-decoration:none">virtualoranges.com</a></div>
+
+<script>
+const demoReplies=[
+  "Great question! In the full live version, I'd answer this instantly using real knowledge from Mego Afek AC LTD's website. Want to see it deployed on your site?",
+  "This is a demo — but the real AI agent would know all of Mego Afek AC LTD's services, pricing, and policies in detail. It handles questions like this automatically, 24/7.",
+  "I'm a demo version of what your site could have. The live agent answers questions like this in real-time, qualifies leads, and even books appointments — all automatically.",
+  "The full agent would pull the exact answer from Mego Afek AC LTD's content. It's trained on every page of your site, so customers get accurate, on-brand responses every time."
+];
+let ri=0;
+function add(txt,type){
+  const d=document.createElement('div');
+  d.className='bubble '+type;
+  d.innerHTML=txt;
+  const msgs=document.getElementById('msgs');
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function send(){
+  const i=document.getElementById('ci');
+  const v=i.value.trim();
+  if(!v)return;
+  add(v,'user');
+  i.value='';
+  setTimeout(()=>{
+    add(demoReplies[ri%demoReplies.length],'bot');
+    ri++;
+  },800);
+}
+</script>
+</body>
+</html>
